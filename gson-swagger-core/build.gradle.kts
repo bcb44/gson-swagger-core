@@ -12,11 +12,13 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+    `maven-publish`
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -35,10 +37,6 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
 
     implementation("com.google.code.gson:gson:2.10.1")
-
-    implementation("io.swagger.core.v3:swagger-core:2.2.9")
-    implementation("io.swagger.core.v3:swagger-integration:2.2.9")
-    implementation("io.swagger.core.v3:swagger-jaxrs:2.2.9")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

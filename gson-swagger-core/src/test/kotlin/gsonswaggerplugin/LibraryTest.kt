@@ -7,15 +7,18 @@ import com.fasterxml.jackson.databind.MapperFeature
 import com.fasterxml.jackson.databind.json.JsonMapper
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import testobjects.ExposedFields
+import testobjects.NameChanged
 import kotlin.test.Test
 
 
 class LibraryTest {
     @Test
     fun someLibraryMethodReturnsTrue() {
-        val pojo = ExposedFields("a", "b", "c", "d");
-        val om = JsonMapper.builder().configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true).build()
+        val pojo = NameChanged("hello") //ExposedFields("a", "b", "c", "d");
+        val om = JsonMapper.builder()
+            .configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true)
+            .annotationIntrospector(GsonAnnotationIntrospector())
+            .build()
         val jacksonJson = om.writeValueAsString(pojo)
         println("jackson:     $jacksonJson")
         var gsonJson = Gson().toJson(pojo)

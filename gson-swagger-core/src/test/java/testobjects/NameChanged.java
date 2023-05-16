@@ -18,4 +18,20 @@ public class NameChanged {
     // @JsonProperty(value = "hello", access = JsonProperty.Access.WRITE_ONLY)
     @SerializedName("gsonName")
     private String hello;
+
+    public String getShouldBeHidden() {
+        return shouldBeHidden;
+    }
+
+    public void setShouldBeHidden(String shouldBeHidden) {
+        this.shouldBeHidden = shouldBeHidden;
+    }
+
+    private transient String shouldBeHidden;
+
+    public NameChanged(String name) {
+        hello = name;
+    }
+
+
 }
