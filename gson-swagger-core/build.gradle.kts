@@ -37,6 +37,12 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
 
     implementation("com.google.code.gson:gson:2.10.1")
+
+    // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-jaxrs2
+    implementation("io.swagger.core.v3:swagger-jaxrs2:2.2.9")
+
+    // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core
+    implementation("io.swagger.core.v3:swagger-core:2.2.9")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
