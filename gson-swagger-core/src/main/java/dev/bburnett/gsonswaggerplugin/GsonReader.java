@@ -1,4 +1,4 @@
-package gsonswaggerplugin;
+package dev.bburnett.gsonswaggerplugin;
 
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
