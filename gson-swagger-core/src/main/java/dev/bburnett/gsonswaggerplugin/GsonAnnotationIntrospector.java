@@ -54,5 +54,4 @@ public class GsonAnnotationIntrospector extends JacksonAnnotationIntrospector {
 
         return super.findNameForDeserialization(a);
     }
-
 }

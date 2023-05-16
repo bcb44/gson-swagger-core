@@ -12,20 +12,11 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
-    id ("maven-publish")
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
-}
-
-publishing {
-    repositories {
-        maven {
-            url = uri("")
-        }
-    }
 }
 
 dependencies {
@@ -50,6 +41,10 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core
     implementation("io.swagger.core.v3:swagger-core:2.2.9")
+
+    // https://mvnrepository.com/artifact/org.json/json
+    testImplementation("org.json:json:20230227")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

@@ -1,9 +1,8 @@
 package testobjects;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
-public class NameChanged {
+public class SimpleNameChanged {
     public String getHello() {
         return hello;
     }
@@ -19,18 +18,16 @@ public class NameChanged {
     @SerializedName("gsonName")
     private String hello;
 
-    public String getShouldBeHidden() {
-        return shouldBeHidden;
-    }
-
-    public void setShouldBeHidden(String shouldBeHidden) {
-        this.shouldBeHidden = shouldBeHidden;
-    }
-
-    private transient String shouldBeHidden;
-
-    public NameChanged(String name) {
-        hello = name;
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof SimpleNameChanged)) {
+            return false;
+        }
+        SimpleNameChanged otherNameChanged = (SimpleNameChanged) other;
+        if (this.hello == null) {
+            return otherNameChanged.getHello() == null;
+        }
+        return this.hello.equals(otherNameChanged.getHello());
     }
 
 
