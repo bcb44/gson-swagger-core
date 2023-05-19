@@ -1,4 +1,4 @@
-package dev.bburnett.gsonswaggerplugin;
+package dev.bburnett.gsonswaggercore;
 
 import com.fasterxml.jackson.databind.PropertyName;
 import com.fasterxml.jackson.databind.introspect.Annotated;
